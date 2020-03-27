@@ -18,8 +18,8 @@ public class GroupOfCards
 {
    
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
-    private int size;//the size of the grouping
+    protected ArrayList <Card> cards;
+    protected int size;//the size of the grouping
     
     public GroupOfCards(int givenSize)
     {
@@ -30,15 +30,6 @@ public class GroupOfCards
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
-    {
-        return cards;
-    }
-    
-    public void shuffle()
-    {
-        Collections.shuffle(cards);
-    }
 
     /**
      * @return the size of the group of cards
@@ -52,6 +43,23 @@ public class GroupOfCards
      */
     public void setSize(int givenSize) {
         size = givenSize;
+    }
+    
+    public void addCard(Card card)
+    {
+        if (cards.size() >= size)
+        {
+            throw new IllegalArgumentException("Too much cards in the array");
+        }
+        cards.add(card);
+    }
+    public Card removeFirst()
+    {
+        if (size == 0)
+        {
+            throw new IllegalArgumentException("No cards in the array");
+        }
+        return cards.remove(0);
     }
     
 }//end class

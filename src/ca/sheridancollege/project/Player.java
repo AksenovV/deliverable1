@@ -12,7 +12,7 @@ package ca.sheridancollege.project;
 public abstract class Player 
 {
     private String playerID; //the unique ID for this player
-    
+    private Hand playerHand;
     /**
      * A constructor that allows you to set the player's unique ID
      * @param name the unique ID to assign to this player.
