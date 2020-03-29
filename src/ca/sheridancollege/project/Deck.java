@@ -21,4 +21,8 @@ public class Deck extends GroupOfCards{
     {
         Collections.shuffle(cards);
     }
+    public void giveCard(Player player)
+    {
+        
+    }
 }
