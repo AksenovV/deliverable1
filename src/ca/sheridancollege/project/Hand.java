@@ -12,12 +12,29 @@ import java.util.ArrayList;
  * @author vlado
  */
 public class Hand extends GroupOfCards{
-    public Hand(int sz)
+    public Hand()
     {
-        super(sz);
+        super();
     }
-    public ArrayList<Card> showCards()
+    public String showCards()
     {
-        return cards;
+        String ans = "";
+        for (int i = 0; i < getSize(); ++i)
+        {
+            Card tmp = cards.get(i);
+            ans += tmp;
+            ans += '\n';
+        }
+        return ans;
+    }
+    public int handSum()
+    {
+        int sum = 0;
+        for (int i = 0; i < getSize(); ++i)
+        {
+            Card tmp = cards.get(i);
+            sum += tmp.getIntValue();
+        }
+        return sum;
     }
 }

@@ -11,7 +11,7 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card 
+public class Card 
 {
     public enum Suit
     {
@@ -31,7 +31,7 @@ public abstract class Card
         Eight,
         Nine,
         Ten,
-        jack,
+        Jack,
         Queen,
         King,
         Ace;
@@ -43,6 +43,13 @@ public abstract class Card
     {
            mSuit = s;
            mValue = gVal;
+    }
+    public int getIntValue()
+    {
+        int ans =  mValue.ordinal();
+        if (ans == 12) return 1;
+        if (ans > 8) return 10;
+        return ans + 2;
     }
     /**
      * Students should implement this method for their specific children classes 

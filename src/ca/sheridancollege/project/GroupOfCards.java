@@ -19,11 +19,10 @@ public class GroupOfCards
    
     //The group of cards, stored in an ArrayList
     protected ArrayList <Card> cards;
-    protected int size;//the size of the grouping
     
-    public GroupOfCards(int givenSize)
+    public GroupOfCards()
     {
-        size = givenSize;
+        cards = new ArrayList<Card>();
     }
     
     /**
@@ -35,31 +34,16 @@ public class GroupOfCards
      * @return the size of the group of cards
      */
     public int getSize() {
-        return size;
+        return cards.size();
     }
 
     /**
      * @param givenSize the max size for the group of cards
      */
-    public void setSize(int givenSize) {
-        size = givenSize;
-    }
     
     public void addCard(Card card)
     {
-        if (cards.size() >= size)
-        {
-            throw new IllegalArgumentException("Too much cards in the array");
-        }
         cards.add(card);
-    }
-    public Card removeFirst()
-    {
-        if (size == 0)
-        {
-            throw new IllegalArgumentException("No cards in the array");
-        }
-        return cards.remove(0);
     }
     
 }//end class
