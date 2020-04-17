@@ -72,6 +72,7 @@ public class Game
             Player current = players.get(playerNumber);
             if (current.isHuman() == false)
             {
+                if (isAIDone) continue;
                 if (current.isGoingToHit())
                 {
                     mDeck.giveCard(current);
@@ -85,6 +86,7 @@ public class Game
             }
             else
             {
+                if (isPlayerDone) continue;
                 boolean goodData = false;
                 while(!goodData) {
                     System.out.println("Your turn");
@@ -111,11 +113,13 @@ public class Game
                 if (current.isHuman())
                 {
                     System.out.println("Player wins!");
+                    displayInfo();
                     break;
                 }
                 else
                 {
                     System.out.println("AI wins!");
+                    displayInfo();
                     break;
                 }
             }
@@ -125,11 +129,13 @@ public class Game
                 if (current.isHuman())
                 {
                     System.out.println("AI wins!");
+                    displayInfo();
                     break;
                 }
                 else
                 {
                     System.out.println("Player wins!");
+                    displayInfo();
                     break;
                 }
             }
@@ -146,22 +152,36 @@ public class Game
             if (players.get(0).isHuman())
             {
                 System.out.println("Player wins!");
+                displayInfo();
             }
             else
             {
                 System.out.println("AI wins!");
+                displayInfo();
             }
         }
-        else
+        else if (players.get(0).sum() < players.get(1).sum())
         {
             if (players.get(0).isHuman())
             {
                 System.out.println("AI wins!");
+                displayInfo();
             }
             else
             {
                 System.out.println("Player wins!");
+                displayInfo();
             }
         }
+        else
+        {
+            System.out.println("Draw");
+            displayInfo();
+        }
+    }
+    void displayInfo()
+    {
+        System.out.println("First player sum: " + players.get(0).sum());
+        System.out.println("Second player sum: " + players.get(1).sum());
     }
 }//end class
