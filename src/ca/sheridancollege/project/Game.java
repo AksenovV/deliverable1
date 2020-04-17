@@ -67,6 +67,8 @@ public class Game
         int playerNumber = 0;
         mDeck.giveCard(players.get(0));
         mDeck.giveCard(players.get(1));
+        mDeck.giveCard(players.get(0));
+        mDeck.giveCard(players.get(1));
         while(!isAIDone || !isPlayerDone)
         {
             Player current = players.get(playerNumber);
