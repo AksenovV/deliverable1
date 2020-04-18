@@ -114,13 +114,13 @@ public class Game
                 isOver = true;
                 if (current.isHuman())
                 {
-                    System.out.println("AI busted, Player wins!");
+                    System.out.println("Player wins!");
                     displayInfo();
                     break;
                 }
                 else
                 {
-                    System.out.println("Player busted, AI wins!");
+                    System.out.println("AI wins!");
                     displayInfo();
                     break;
                 }
@@ -130,13 +130,13 @@ public class Game
                 isOver = true;
                 if (current.isHuman())
                 {
-                    System.out.println("AI wins!");
+                    System.out.println("Player busted, AI wins!");
                     displayInfo();
                     break;
                 }
                 else
                 {
-                    System.out.println("Player wins!");
+                    System.out.println("AI busted, Player wins!");
                     displayInfo();
                     break;
                 }
